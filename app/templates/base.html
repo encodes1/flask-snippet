@@ -2,15 +2,24 @@
     <head>
       <title>{% block title %}My Site{% endblock %}</title>
       {% block css %}
-      <link rel="stylesheet" href="/static/css/reset-min.css" />
-      <link rel="stylesheet" href="/static/css/main.css" />
+        <link rel="stylesheet" href="/static/css/bootstrap.css" />
+        <link rel="stylesheet" href="/static/css/monokai.css" />
       {% endblock %}
       {% block script %}
-      <script src="src="/static/js/main.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="/static/js/tabby.js" ></script>
+         <script src="/static/js/highlight.js" ></script>
+        <script>
+          $(document).ready(function(){
+              $(".tabby").tabby();
+          });
+        </script>
       {% endblock %}
     </head>
     <body>
-      <div id="header>{% block header %}{% endblock %}</div>
+
+    TODO : -https://github.com/ajaxorg/ace
+      <div id="header">{% block header %}{% endblock %}</div>
       <div id="messages-wrap">
         <div id="messages">
           {% for category, msg in get_flashed_messages(with_categories=true) %}

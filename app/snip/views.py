@@ -26,6 +26,6 @@ def login():
 
 @mod.route('/view/', methods=['GET', 'POST'])
 def view():
-    snippet = Snippet.query.filter_by(id=1).first()
+    snippet = Snippet.query.filter_by(id=2).first()
     code =  highlight(snippet.code, PythonLexer(), HtmlFormatter())
     return render_template("snip/Snip.html", snippet=snippet, code=code)
